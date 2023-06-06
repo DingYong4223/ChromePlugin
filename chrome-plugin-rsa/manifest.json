@@ -1,0 +1,20 @@
+{
+  "name": "RSA加密插件",
+  "version": "1.0",
+  "description": "使用RSA算法进行加密和解密",
+  "manifest_version": 2,
+  "icons": {
+	"16": "img/icon.png",
+	"48": "img/icon.png",
+	"128": "img/icon.png"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage"
+  ],
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
