@@ -62,3 +62,23 @@ document.getElementById('decrypt-btn').addEventListener('click', () => {
   const decryptedMessage = decryptMessage(encryptedMessage);
   document.getElementById('output-text').textContent = decryptedMessage;
 });
+
+document.getElementById('netreq-btn').addEventListener('click', () => {
+  const xhr = new XMLHttpRequest();
+  xhr.withCredentials = true;
+  xhr.open('GET', 'https://www.baidu.com/index.html');
+  xhr.onload = () => {
+    if (xhr.status === 200) {
+      //const response = JSON.parse(xhr.responseText);
+      document.getElementById('output-text').textContent = xhr.responseText;
+      console.log(xhr.responseText);
+    } else {
+      console.error(xhr.statusText);
+    }
+  };
+  xhr.onerror = () => {
+    console.error('Network error');
+  };
+  xhr.send();
+});
+
